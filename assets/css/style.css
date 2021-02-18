@@ -1,0 +1,198 @@
+/* 
+    CRUD application stylesheet
+    Author: Nazmul Alam
+*/
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
+:root {
+    --primary-color: #3498db;
+    --secondery-color: rgb(77, 77, 77);
+    --font: "Noto Sans JP", sans-serif;
+    --transition: all 600ms;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font);
+}
+
+/* Loading spinner */
+.loader {
+    border: 3px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 3px solid #3498db;
+    width: 25px;
+    height: 25px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+    display: none;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.laoder.is-loading {
+    display: inline-block !important;
+}
+
+/* Header part */
+header {
+    width: 100vw;
+    height: 70px;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.site-logo {
+    color: white;
+    padding: 0 30px;
+}
+
+/* Main body part */
+.main-body {
+    display: flex;
+    width: 100vw;
+    min-height: calc(100vh - 200px);
+}
+.content{
+    padding: 80px;
+}
+.toolbar {
+    display: inline-flex;
+    flex-direction: column;
+    width: 300px;
+    height: calc(100vh - 70px);
+    background-color: var(--secondery-color);
+    padding: 50px 20px;
+    color: white;
+    font-size: 0.8em;
+    font-weight: 400;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.tool-button {
+    border: 1px solid white;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100%;
+    transition: var(--transition);
+}
+.tool-button:not(:last-child) {
+    margin-bottom: 10px;
+}
+.tool-button:hover { 
+    border-radius: 8px;
+    box-shadow: 0 0 6px white !important;
+}
+.welcome-message {
+    display: inline-flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Lightbox */
+.lightbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(88, 88, 88, 0.39);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.close-lightbox {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close-lightbox:hover {
+    background-color: rgb(141, 5, 5);
+}
+
+/* Form part */
+.crud-form {
+    width: 600px;
+    height: auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 5px;
+    max-height: 600px;
+    overflow-y: auto;
+}
+.crud-form .input-group {
+    display: inline-flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 5px 0;
+}
+
+.crud-form input,
+.crud-form select {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+input[type="submit"]:hover {
+    transition: var(--transition);
+    cursor: pointer;
+    background-color: #ccc;
+}
+
+/* Employee list */
+.crud-list table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    font-size: .7em;
+}
+.crud-list table th,
+.crud-list table td {
+    padding: 6px 8px;
+}
+.crud-list tr {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.crud-list i {
+    padding: 0 8px;
+    cursor: pointer;
+}
+.crud-list i:hover {
+    transition: var(--transition);
+    color: #ccc;
+}
+.crud-list table td:last-child,.crud-list table th:last-child{
+    width: 100px;
+}

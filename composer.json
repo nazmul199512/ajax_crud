@@ -1,0 +1,22 @@
+{
+    "name": "nazmul/crud",
+    "description": "Crud operation project",
+    "type": "project",
+    "license": "GPL v2",
+    "authors": [
+        {
+            "name": "Nazmul Alam",
+            "email": "nazmul199512@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "crud\\":"./includes"
+        },
+        "files": [
+            "./includes/functions.php"
+        ]
+    }
+}
